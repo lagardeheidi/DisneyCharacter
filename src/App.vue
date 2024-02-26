@@ -1,20 +1,26 @@
 <template>
+    <HeaderVue></HeaderVue>
+    <CharacterGalleryVue></CharacterGalleryVue>
+    <CharacterCardVue></CharacterCardVue>
+    <div id="app"></div>
 
-    <div id="app">
-        <p>Hello World</p>
-    </div>
-
+    <body>
+        <div></div>
+    </body>
 </template>
 
 <script>
-    export default {
-    name: 'App',
+import CharacterCardVue from './components/Character-card.vue';
+import CharacterGalleryVue from './components/Character-gallery.vue';
+import HeaderVue from './components/Header.vue';
+
+export default {
+    components: {
+        CharacterGalleryVue,
+        HeaderVue,
+        CharacterCardVue
     }
+}
 </script>
 
-<style>
-p {
-    text-align: center;
-    font-size: 18px;
-}
-</style>
+<style></style>
