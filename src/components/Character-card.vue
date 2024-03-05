@@ -23,10 +23,11 @@ export default {
     width: 400px;
     height: 300px;
     margin: 20px;
-    border-radius: 10px;
     overflow: hidden;
     position: relative;
     transition: transform 0.3s;
+    border: 6px solid rgb(211, 15, 113);
+    border-radius: 10px;
 }
 
 .image-container {
@@ -38,7 +39,7 @@ export default {
 .image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
 }
 
@@ -56,6 +57,5 @@ export default {
 
 .Character-card:hover {
     transform: scale(1.1);
-
 }
 </style>
