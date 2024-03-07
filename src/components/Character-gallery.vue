@@ -14,7 +14,8 @@ export default {
         CharacterCard
     },
     props: {
-        searchQuery: String
+        searchQuery: String,
+        selectedFilm: String
     },
     data() {
         return {
@@ -23,15 +24,31 @@ export default {
     },
     computed: {
         filteredCharacters() {
-            if (!this.searchQuery) {
+            let filtered = this.CharacterData;
 
-                return this.CharacterData;
-            } else {
-
-                return this.CharacterData.filter(character =>
+            // Filtrage par nom
+            if (this.searchQuery) {
+                filtered = filtered.filter(character =>
                     character.name.toLowerCase().includes(this.searchQuery.toLowerCase())
                 );
             }
+            // Filtrage par film
+            if (this.selectedFilm) {
+                filtered = filtered.filter(character =>
+                    character.films.includes(this.selectedFilm)
+                );
+            }
+
+            // Filtrage supplémentaire 
+            filtered = filtered.filter(character =>
+                character.name.toLowerCase() !== 'nazis' && //oups
+                character.films.length > 1 &&
+                character.tvShows.length > 0 &&
+                character.videoGames.length > 0 &&
+                !character.imageUrl.toLowerCase().endsWith('.gif')
+            );
+
+            return filtered;
         }
     },
     async mounted() {
