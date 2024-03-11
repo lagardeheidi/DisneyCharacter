@@ -7,39 +7,21 @@
 
 <script>
 import CharacterCard from './Character-card.vue';
-import getCharacterData from '@/services/api/CharacterRepositery.js';
 
 export default {
     components: {
         CharacterCard
     },
-    props: {
-        searchQuery: String,
-        selectedFilm: String
-    },
+    props: [
+        'searchQuery', 'CharacterData'
+    ],
     data() {
-        return {
-            CharacterData: []
-        };
     },
     computed: {
         filteredCharacters() {
             let filtered = this.CharacterData;
 
-            // Filtrage par nom
-            if (this.searchQuery) {
-                filtered = filtered.filter(character =>
-                    character.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-                );
-            }
-            // Filtrage par film
-            if (this.selectedFilm) {
-                filtered = filtered.filter(character =>
-                    character.films.includes(this.selectedFilm)
-                );
-            }
-
-            // Filtrage supplémentaire 
+            // Filtrage supplémentaire
             filtered = filtered.filter(character =>
                 character.name.toLowerCase() !== 'nazis' && //oups
                 character.films.length > 2 &&
@@ -49,13 +31,6 @@ export default {
             );
 
             return filtered;
-        }
-    },
-    async mounted() {
-        try {
-            this.CharacterData = await getCharacterData();
-        } catch (error) {
-            console.error('Erreur lors de la récupération des données des personnages :', error);
         }
     }
 };

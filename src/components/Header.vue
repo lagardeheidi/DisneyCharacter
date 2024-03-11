@@ -18,18 +18,14 @@ export default {
     methods: {
         searchCharacter() {
             this.$emit('search', this.searchQuery, this.selectedFilm);
+
         }
     }
 };
 </script>
 
 <style>
-.h1 {
-    font-family: 'Waltograph';
-}
-
 .Header {
-    /* font-family: 'Arial'; */
     position: fixed;
     top: 0;
     left: 0;
@@ -78,5 +74,6 @@ h1 {
     text-align: left;
     font-weight: lighter;
     margin: 0;
+    font-family: 'Waltograph';
 }
 </style>

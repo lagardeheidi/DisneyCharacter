@@ -1,14 +1,16 @@
 <template>
-    <div id="app">
-        <div v-if="loading" class="loading-message">Chargement de la page...</div>
-        <HeaderVue @search="handleSearch"></HeaderVue>
-        <CharacterGalleryVue :searchQuery="searchQuery"></CharacterGalleryVue>
-    </div>
+
+    <!-- <div v-if="loading" class="loading-message">Chargement de la page...</div> -->
+    <HeaderVue @search="handleSearch"></HeaderVue>
+    <CharacterGalleryVue :CharacterData="CharacterData"></CharacterGalleryVue>
+
+
 </template>
 
 <script>
 import CharacterGalleryVue from './components/Character-gallery.vue';
 import HeaderVue from './components/Header.vue';
+import getCharacterData from './services/api/CharacterRepositery';
 
 export default {
     components: {
@@ -17,19 +19,20 @@ export default {
     },
     data() {
         return {
-            searchQuery: '',
+            CharacterData: [],
             loading: true
         };
     },
     methods: {
         handleSearch(query) {
-            this.searchQuery = query;
+            this.searchCharacter(query)
+        },
+        async searchCharacter(name) {
+            this.CharacterData = await getCharacterData(name);
         }
     },
-    mounted() {
-        setTimeout(() => {
-            this.loading = false;
-        }, 15000);
+    async mounted() {
+        this.searchCharacter()
     }
 }
 </script>
