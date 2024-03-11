@@ -29,6 +29,5 @@ export default async function getCharacterData(name) {
 		return allCharacters;
 	} catch (error) {
 		console.error(error);
-		throw error;
 	}
 }
