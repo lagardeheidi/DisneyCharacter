@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <div v-if="loading" class="loading-message">Chargement de la page...</div>
         <HeaderVue @search="handleSearch"></HeaderVue>
         <CharacterGalleryVue :searchQuery="searchQuery"></CharacterGalleryVue>
     </div>
@@ -16,15 +17,34 @@ export default {
     },
     data() {
         return {
-            searchQuery: ''
+            searchQuery: '',
+            loading: true
         };
     },
     methods: {
         handleSearch(query) {
             this.searchQuery = query;
         }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.loading = false;
+        }, 15000);
     }
 }
 </script>
 
-<style></style>
+<style>
+.loading-message {
+    position: fixed;
+    font-family: 'Waltograph';
+    font-size: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(203, 3, 160, 0.2);
+}
+</style>

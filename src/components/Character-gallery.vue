@@ -42,8 +42,8 @@ export default {
             // Filtrage supplémentaire 
             filtered = filtered.filter(character =>
                 character.name.toLowerCase() !== 'nazis' && //oups
-                character.films.length > 1 &&
-                character.tvShows.length > 0 &&
+                character.films.length > 2 &&
+                character.tvShows.length > 1 &&
                 character.videoGames.length > 0 &&
                 !character.imageUrl.toLowerCase().endsWith('.gif')
             );

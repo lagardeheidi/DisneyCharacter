@@ -7,26 +7,14 @@
                     placeholder="Rechercher un personnage...">
                 <button class="search-button" @click="searchCharacter">Rechercher</button>
             </div>
-            <div class="filter-container">
-                <label for="filmFilter">Sélectionner un film:</label>
-                <select id="filmFilter" v-model="selectedFilm">
-                    <option value="">Tous les films</option>
-                    <option v-for="film in films" :key="film">{{ film }}</option>
-                </select>
-            </div>
+
         </header>
     </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            searchQuery: '',
-            selectedFilm: '',
-            films: ['Mulan', 'Tangled', 'The Little Mermaid']
-        };
-    },
+
     methods: {
         searchCharacter() {
             this.$emit('search', this.searchQuery, this.selectedFilm);
@@ -36,8 +24,12 @@ export default {
 </script>
 
 <style>
+.h1 {
+    font-family: 'Waltograph';
+}
+
 .Header {
-    font-family: 'Arial';
+    /* font-family: 'Arial'; */
     position: fixed;
     top: 0;
     left: 0;
@@ -46,9 +38,7 @@ export default {
     z-index: 999;
 }
 
-.h1 {
-    font-family: 'Waltograph';
-}
+
 
 header {
     display: flex;
