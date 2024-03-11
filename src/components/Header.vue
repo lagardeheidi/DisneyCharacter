@@ -38,8 +38,6 @@ export default {
     z-index: 999;
 }
 
-
-
 header {
     display: flex;
     justify-content: space-between;
