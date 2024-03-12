@@ -7,7 +7,7 @@
                     placeholder="Rechercher un personnage...">
                 <button class="search-button" @click="searchCharacter">Rechercher</button>
             </div>
-
+            <button class="quote-button" @click="displayRandomQuote">Afficher une citation</button>
         </header>
     </div>
 </template>
@@ -17,8 +17,10 @@ export default {
 
     methods: {
         searchCharacter() {
-            this.$emit('search', this.searchQuery, this.selectedFilm);
-
+            this.$emit('search', this.searchQuery); // Émettre un événement avec la recherche
+        },
+        displayRandomQuote() {
+            this.$emit('displayQuote'); // Émettre un événement pour afficher une citation aléatoire
         }
     }
 };
@@ -65,8 +67,9 @@ header {
 }
 
 .search-button:hover {
-    transform: scale(1.2);
-    background-color: rgb(158, 40, 181);
+    transform: scale(1.1);
+    background-color: #EFA9AE;
+    color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -75,5 +78,20 @@ h1 {
     font-weight: lighter;
     margin: 0;
     font-family: 'Waltograph';
+}
+
+.quote-button {
+    padding: 8px 16px;
+    background-color: #ececec;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quote-button:hover {
+    transform: scale(1.1);
+    background-color: #EFA9AE;
+    color: rgb(255, 255, 255);
 }
 </style>

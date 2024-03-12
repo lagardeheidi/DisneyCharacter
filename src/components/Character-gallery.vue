@@ -38,7 +38,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    margin-top: 100px;
+    gap: 40px;
+    margin-top: 140px;
 }
 </style>
