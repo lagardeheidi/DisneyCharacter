@@ -1,9 +1,7 @@
 <template>
     <div class="Character-gallery">
-        <router-link v-for="character in filteredCharacters" :key="character._id"
-            :to="{ name: 'character', params: { id: character._id } }">
-            <CharacterCard :name="character.name" :image-url="character.imageUrl" />
-        </router-link>
+        <CharacterCard :name="character.name" :image-url="character.imageUrl" v-for="character in filteredCharacters"
+            :key="character._id" />
     </div>
 </template>
 
@@ -16,11 +14,11 @@ export default {
     },
     props: {
         searchQuery: String,
-        characterData: Array // Changez le nom de la prop en characterData
+        characterData: Array
     },
     computed: {
         filteredCharacters() {
-            let filtered = this.characterData; // Utilisez this.characterData au lieu de this.CharacterData
+            let filtered = this.characterData;
 
             // Filtrage supplémentaire
             filtered = filtered.filter(character =>
