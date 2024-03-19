@@ -22,13 +22,17 @@ export default {
         return {
             CharacterData: [],
             quotes: [
-                "Eh oui, le passé est douloureux. Mais à mon sens, on peut soit le fuir, soit tout en apprendre - Rafiki (Roi Lion)",
-                "Les choses qui me rendent différent font qui je suis réellement - Winnie L'ourson",
-                "Hakuna Matata ! Ça veut dire pas de souci ! - Pumba (Roi Lion)",
-                "Nage droit d'vant toi, nage droit d'vant toi, nage droit d'vant, d'vant toi, d'vant toi - Dory (Le Monde de Némo)",
-                "Le monde est à nous, il suffit de le prendre - Clochard (La Belle et le Clochard)",
-                "Il en faut peu pour être heureux, vraiment très peu pour être heureux... - Baloo (Le livre de la jungle)",
-                "Peu importe l’état de ton cœur, si tu continues de croire, le rêve que tu désires se réalisera - Cendrillon"
+                "Venture outside your comfort zone. The rewards are worth it. - Rapunzel (Tangled)",
+                "All it takes is faith and trust. - Peter Pan(Peter Pan)",
+                "The flower that blooms in adversity is the most rare and beautiful of all. - The Emperor (Mulan)",
+                "Don't just fly, soar. - Dumbo (Dumbo)",
+                "In every job that must be done, there is an element of fun.- Mary Poppins (Mary Poppins)",
+                "The problem is not the problem. The problem is your attitude about the problem.- Jack Sparrow(Pirates of the Caribbean)",
+                "Today is a good day to try.- Quasimodo(The Hunchback of Notre Dame)",
+                "Oh yes, the past can hurt. But the way I see it, you can either run from it or learn from it - Rafiki (The Lion King)",
+                "You're braver than you believe, and stronger than you seem, and smarter than you think - Winnie the Pooh (Pooh's Most Grand Adventure)",
+                "Happiness is the richest thing we will ever own - Donald Duck",
+                "Now, think of the happiest things. It's the same as having wings. - Peter Pan (Peter Pan)"
             ],
             currentQuoteIndex: 0, // Index de la citation actuelle
             currentQuote: ""
