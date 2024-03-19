@@ -28,6 +28,7 @@ export default {
     transition: transform 0.3s;
     border: 6px solid rgb(211, 15, 113);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .image-container {
