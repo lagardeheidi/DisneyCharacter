@@ -68,7 +68,7 @@ header {
 }
 
 h1 {
-    color: rgb(185, 169, 169);
+    color: rgb(255, 255, 255);
     text-align: left;
     font-weight: lighter;
     margin: 0;
