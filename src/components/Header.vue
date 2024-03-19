@@ -1,7 +1,7 @@
 <template>
     <div class="Header">
         <header>
-            <h1>Disney Character</h1>
+            <h1 @click="navigateToHome">Disney Character</h1>
             <div class="search-container">
                 <input type="text" class="search-input" v-model="searchQuery" @input="searchCharacter"
                     placeholder="Rechercher un personnage...">
@@ -16,6 +16,9 @@ export default {
     methods: {
         searchCharacter() {
             this.$emit('search', this.searchQuery);
+        },
+        navigateToHome() {
+            this.$router.push({ path: '/' });
         }
     }
 };
@@ -30,6 +33,7 @@ export default {
     background-color: rgb(211, 15, 113);
     z-index: 999;
 }
+
 
 header {
     display: flex;
@@ -73,5 +77,6 @@ h1 {
     font-weight: lighter;
     margin: 0;
     font-family: 'Waltograph';
+    cursor: pointer;
 }
 </style>

@@ -30,6 +30,7 @@ export default {
 }
 
 .quote-text {
+    font-family: "Handlee", cursive;
     font-size: 18px;
     color: #000000;
     margin: 0;
@@ -37,7 +38,7 @@ export default {
 }
 
 .quote-author {
-    font-style: normal;
+    font-style: italic;
     font-weight: bold;
     color: #333;
     margin-top: 5px;
