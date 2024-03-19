@@ -1,14 +1,20 @@
 <template>
     <div class="Character-gallery">
-        <CharacterCard :name="character.name" :image-url="character.imageUrl" v-for="character in filteredCharacters"
-            :key="character._id" />
+        <div v-for="character in filteredCharacters" :key="character._id"
+            @click="navigateToCharacterDetails(character)">
+            <CharacterCard :name="character.name" :image-url="character.imageUrl" />
+        </div>
     </div>
 </template>
-
 <script>
 import CharacterCard from './Character-card.vue';
 
 export default {
+    methods: {
+        navigateToCharacterDetails(character) {
+            this.$router.push({ name: 'character', params: { id: character._id, characterName: character.name, imageUrl: character.imageUrl, films: character.films } });
+        }
+    },
     components: {
         CharacterCard
     },
