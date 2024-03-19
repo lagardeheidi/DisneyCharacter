@@ -3,12 +3,14 @@
         <HeaderVue @search="handleSearch"></HeaderVue>
         <Quote :quote="currentQuote"></Quote>
         <CharacterGalleryVue :characterData="CharacterData"></CharacterGalleryVue>
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
 import CharacterGalleryVue from "./Character-gallery.vue";
 import HeaderVue from "./Header.vue";
+import Footer from "./Footer.vue";
 import Quote from "./quote.vue";
 import getCharacterData from "@/services/api/CharacterRepositery";
 
@@ -16,7 +18,8 @@ export default {
     components: {
         CharacterGalleryVue,
         HeaderVue,
-        Quote
+        Quote,
+        Footer
     },
     data() {
         return {

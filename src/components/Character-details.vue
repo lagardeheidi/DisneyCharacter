@@ -1,13 +1,9 @@
 <template>
-
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-    </head>
     <div class="character-details">
         <HeaderVue></HeaderVue>
         <div class="details-container">
+            <div class="home-button" @click="navigateToHome"><img width="15" height="15"
+                    src="https://img.icons8.com/ios-glyphs/30/left.png" alt="left" /></div>
             <h1 class="character-name">{{ characterName }}</h1>
             <img class="character-image" :src="imageUrl" :alt="characterName" />
             <h2>Films:</h2>
@@ -30,8 +26,10 @@ export default {
         imageUrl: String,
         films: Array
     },
-    created() {
-
+    methods: {
+        navigateToHome() {
+            this.$router.push({ path: '/' });
+        },
     }
 };
 </script>
@@ -50,7 +48,8 @@ export default {
 }
 
 .character-name {
-    color: #9e000b;
+    color: #000000;
+    text-align: center;
 }
 
 .character-image {
@@ -58,6 +57,10 @@ export default {
     height: auto;
     margin-top: 20px;
     border-radius: 20px;
+}
+
+.character-image:hover {
+    transition: filter 0.3s ease;
 }
 
 .film-list {
@@ -71,6 +74,26 @@ export default {
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
+}
+
+.home-button {
+    color: #000000;
+    border: 2px solid rgb(216, 2, 134);
+    border-radius: 5px;
+    padding: 5px 18px;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: background-color 0.4s;
+}
+
+.home-button:hover {
+    background-color: #D80286;
+    color: #ffffff;
 }
 
 .handlee-regular {

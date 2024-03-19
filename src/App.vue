@@ -2,9 +2,15 @@
     <HeaderVue @search="handleSearch"></HeaderVue>
     <div>
         <router-view></router-view>
+
     </div>
 </template>
 
 <script>
-export default {}
+import Footer from './components/Footer.vue';
+export default {
+    components: {
+        Footer
+    }
+}
 </script>
