@@ -28,3 +28,34 @@ export default {
     }
 };
 </script>
+<style scoped>
+.character_search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_bar {
+    width: 400px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #D30F71;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.search_button {
+    padding: 10px 20px;
+    background-color: #D30F71;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search_button:hover {
+    background-color: #AA0C5C;
+}
+</style>
