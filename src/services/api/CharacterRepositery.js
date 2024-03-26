@@ -2,8 +2,6 @@ export default async function getCharacterData(name) {
 	const baseUrl = "http://api.disneyapi.dev/character";
 
 	try {
-		let allCharacters = [];
-
 		// choix arbitraire, pour avoir un truc de base
 		let url = `${baseUrl}?page=1&pageSize=100`;
 
@@ -13,11 +11,7 @@ export default async function getCharacterData(name) {
 		}
 
 		const response = await fetch(url);
-		const data = await response.json();
-		const characters = data.data;
-		allCharacters = [...allCharacters, ...characters];
-
-		return allCharacters;
+		return response.json();
 	} catch (error) {
 		console.error(error);
 	}

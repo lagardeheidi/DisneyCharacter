@@ -1,7 +1,12 @@
 <template>
     <div>
         <HeaderVue @search="handleSearch"></HeaderVue>
+        <!-- <HeaderVue></HeaderVue> -->
+
+
         <Quote :quote="currentQuote"></Quote>
+
+        <!-- barre recherche -->
         <CharacterGalleryVue :characterData="CharacterData"></CharacterGalleryVue>
         <Footer></Footer>
     </div>
@@ -41,12 +46,14 @@ export default {
             currentQuote: ""
         };
     },
+
     methods: {
         handleSearch(query) {
             this.searchCharacter(query);
         },
         async searchCharacter(name) {
             this.CharacterData = await getCharacterData(name);
+            // this.categories = getCategoryFromCharacter(this.CharacterData)
         },
         displayNextQuote() {
             this.currentQuoteIndex = (this.currentQuoteIndex + 1) % this.quotes.length;

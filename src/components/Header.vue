@@ -2,25 +2,82 @@
     <div class="Header">
         <header>
             <h1 @click="navigateToHome">Disney Character</h1>
-            <div class="search-container">
+            <!-- <div class="search-container">
                 <input type="text" class="search-input" v-model="searchQuery" @input="searchCharacter"
                     placeholder="Rechercher un personnage...">
                 <button class="search-button" @click="searchCharacter">Rechercher</button>
-            </div>
+            </div> -->
         </header>
     </div>
 </template>
 
 <script>
 export default {
+    // data() {
+    //     // return {
+    //     //     a: 12,
+    //     //     b: 2,
+    //     // }
+    //     return {
+    //         searchCharacterKey: localStorage.getItem("searchCharacterKey") || "",
+    //         characterSearchData: [],
+    //     }
+    // },
+
+    // created() {
+    //     this.resetSearchCharacterKey();
+    //     this.searchText();
+    // },
     methods: {
-        searchCharacter() {
-            this.$emit('search', this.searchQuery);
-        },
+        // searchCharacter() {
+        //     this.$emit('search', this.searchQuery);
+        // },
+
+        // 
+        // resetSearchCharacterKey() {
+        //     this.searchCharacterKey = '';
+        //     localStorage.removeItem('searchCharacterKey');
+        // },
+
+        // search: function () {
+        //     this.searchText()
+        // },
+
+        // async characterSearched() {
+        //     if (this.searchCharacterKey) {
+        //         this.characterSearchData = await getCharacterData(this.searchCharacterKey)
+        //         //recuperer en faisant 
+        //         this.characterSearchData = this.characterSearchData.data; //recupere tous les perso
+        //     }
+        // },
         navigateToHome() {
             this.$router.push({ path: '/' });
         }
-    }
+    },
+    // computed: {
+    //     characterSearchDataFiltered: function () {
+    //         let data = [...this.characterSearchData]
+    //         let dataFilter = data.filter(item => {
+    //             item.name.toLowerCase() !== "nazis" && //oups
+    //                 item.films.length > 1 &&
+    //                 !item.imageUrl?.toLowerCase().endsWith(".gif")
+    //         })
+
+    //         return dataFilter
+    //     }
+    // }
+
+    // computed: {
+
+    //     // Bidule() {
+    //     //     let tableau = [1, 5, 10];
+    //     //     tableau = tableau.filter((item) => {
+    //     //         return item > this.a
+    //     //     })
+    //     //     return tableau;
+    //     // }
+    // },
+
 };
 </script>
 
