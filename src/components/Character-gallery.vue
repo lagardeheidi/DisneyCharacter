@@ -7,8 +7,7 @@
     </head>
     <!-- barre de recherche (composant) pour la gallerie -->
     <SearchCharacter v-model:searchCharacterKey="searchCharacterKey"
-        @update:searchCharacterKey="searchCharacterKey = $event" @search="characterSearched" />
-
+        @update:searchCharacterKey="searchCharacterKey = $event" @search="characterSearched" @sort="sortCharacters" />
     <div class="Character-gallery">
         <div v-for="character in characterSearchData" :key="character._id">
             <template v-if="character.name && character.imageUrl">
@@ -42,11 +41,16 @@ export default {
             this.searchCharacterKey = '';
             localStorage.removeItem('searchCharacterKey');
         },
-
         search: function () {
             this.characterSearched()
         },
-
+        sortCharacters(direction) {
+            if (direction === 'asc') {
+                this.characterSearchData.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (direction === 'desc') {
+                this.characterSearchData.sort((a, b) => b.name.localeCompare(a.name));
+            }
+        },
         // async characterSearched() {
         //     if (this.searchCharacterKey) {
         //         this.characterSearchData = await getCharacterData(this.searchCharacterKey)
