@@ -10,9 +10,13 @@
         @update:searchCharacterKey="searchCharacterKey = $event" @search="characterSearched" />
 
     <div class="Character-gallery">
-        <div v-for="character in characterSearchData" :key="character._id"
-            @click="navigateToCharacterDetails(character)">
-            <CharacterCard :name="character.name" :image-url="character.imageUrl" />
+        <div v-for="character in characterSearchData" :key="character._id">
+            <template v-if="character.name && character.imageUrl">
+                <div
+                    @click="navigateToCharacterDetails(character._id, character.name, character.imageUrl, character.films)">
+                    <CharacterCard :name="character.name" :image-url="character.imageUrl" />
+                </div>
+            </template>
         </div>
     </div>
 </template>
@@ -43,14 +47,35 @@ export default {
             this.characterSearched()
         },
 
+        // async characterSearched() {
+        //     if (this.searchCharacterKey) {
+        //         this.characterSearchData = await getCharacterData(this.searchCharacterKey)
+        //         console.log("lalala" + this.characterSearchData.data.name + this.characterSearchData.data.imageUrl);
+        //     }
+        // },
         async characterSearched() {
             if (this.searchCharacterKey) {
-                this.characterSearchData = await getCharacterData(this.searchCharacterKey)
+                const searchData = await getCharacterData(this.searchCharacterKey);
+                let actualData;
+                if (Array.isArray(searchData)) {
+                    actualData = searchData;
+                } else {
+                    // Si les données sont encapsulées dans un objet Proxy
+                    actualData = searchData['[[Target]]'] || searchData.data;
+                }
+                this.characterSearchData = actualData;
                 console.log("lalala" + this.characterSearchData.data.name + this.characterSearchData.data.imageUrl);
             }
         },
-        navigateToCharacterDetails(character) {
-            this.$router.push({ name: 'character', params: { id: character._id, characterName: character.name, imageUrl: character.imageUrl, films: character.films } });
+        navigateToCharacterDetails(characterId, characterName, imageUrl, films) {
+            this.$router.push({
+                name: 'character', params: {
+                    id: characterId,
+                    characterName: characterName,
+                    imageUrl: imageUrl,
+                    films: films
+                }
+            });
         }
     },
     computed: {
