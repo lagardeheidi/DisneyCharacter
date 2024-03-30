@@ -9,7 +9,7 @@
     <SearchCharacter v-model:searchCharacterKey="searchCharacterKey"
         @update:searchCharacterKey="searchCharacterKey = $event" @search="characterSearched" @sort="sortCharacters" />
     <div class="Character-gallery">
-        <div v-for="character in characterSearchData" :key="character._id">
+        <div v-for="character in filteredCharacters" :key="character._id">
             <template v-if="character.name && character.imageUrl">
                 <div
                     @click="navigateToCharacterDetails(character._id, character.name, character.imageUrl, character.films)">
@@ -18,6 +18,7 @@
             </template>
         </div>
     </div>
+
 </template>
 <script>
 import CharacterCard from './Character-card.vue';
@@ -67,8 +68,9 @@ export default {
                     // Si les données sont encapsulées dans un objet Proxy
                     actualData = searchData['[[Target]]'] || searchData.data;
                 }
-                this.characterSearchData = actualData;
+                this.characterSearchData = Array.isArray(actualData) ? actualData : [actualData];
                 console.log("lalala" + this.characterSearchData.data.name + this.characterSearchData.data.imageUrl);
+
             }
         },
         navigateToCharacterDetails(characterId, characterName, imageUrl, films) {
@@ -82,19 +84,25 @@ export default {
             });
         }
     },
+    // computed: {
+    //     // filteredCharacters: function () {
+    //     //     let data = [...this.characterData];
+
+    //     //     // Filtrage supplémentaire
+    //     //     let filtered = filtered.filter(character =>
+    //     //         character.name.toLowerCase() !== 'nazis'
+
+    //     //     );
+    //     //     return filtered;
+    //     // }
+    // },
     computed: {
-        // filteredCharacters: function () {
-        //     let data = [...this.characterData];
-
-        //     // Filtrage supplémentaire
-        //     let filtered = filtered.filter(character =>
-        //         character.name.toLowerCase() !== 'nazis'
-
-        //     );
-        //     return filtered;
-        // }
+        filteredCharacters() {
+            return this.characterSearchData.filter(character =>
+                character.films.length > 0
+            );
+        }
     },
-
 
 
     components: {
