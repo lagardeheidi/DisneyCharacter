@@ -28,6 +28,7 @@ export default {
     text-align: center;
     z-index: 999;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-left: auto;
@@ -38,14 +39,14 @@ export default {
     font-family: "Handlee", cursive;
     font-size: 18px;
     color: #000000;
-    margin: 0;
+    margin: 1;
     font-style: italic;
+    margin-bottom: 1px;
 }
 
 .quote-author {
     font-style: italic;
     font-weight: bold;
     color: #333;
-    margin-top: 16px;
 }
 </style>
