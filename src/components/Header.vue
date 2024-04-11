@@ -81,7 +81,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .Header {
     position: fixed;
     top: 0;
@@ -89,14 +89,13 @@ export default {
     width: 100%;
     background-color: rgb(211, 15, 113);
     z-index: 999;
+    padding: 10px 20px;
 }
-
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
 }
 
 .search-container {
@@ -109,7 +108,7 @@ header {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ffffff;
-    width: 300px;
+    width: 60%;
     box-sizing: border-box;
 }
 
@@ -135,5 +134,12 @@ h1 {
     margin: 0;
     font-family: 'Waltograph';
     cursor: pointer;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-input {
+        width: 50%;
+    }
 }
 </style>

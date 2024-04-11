@@ -33,8 +33,8 @@ export default {
             characterSearchData: [],
         }
     },
-    created() {
-        this.resetSearchCharacterKey();
+    async created() {
+        // this.resetSearchCharacterKey();
         this.characterSearched();
     },
     methods: {
@@ -115,20 +115,24 @@ export default {
     }
 }
 </script>
-
-<style>
+<style scoped>
 .Character-gallery {
-    font-family: "Handlee", cursive;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 20px;
 }
 
 .handlee-regular {
     font-family: "Handlee", cursive;
     font-weight: 400;
     font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+    .Character-gallery {
+        gap: 5px;
+        margin-bottom: 55px;
+    }
 }
 </style>

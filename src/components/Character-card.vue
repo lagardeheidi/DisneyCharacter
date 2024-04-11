@@ -59,4 +59,11 @@ export default {
 .Character-card:hover {
     transform: scale(1.1);
 }
+
+@media screen and (max-width: 768px) {
+    .Character-card {
+        width: 300px;
+        height: 225px;
+    }
+}
 </style>

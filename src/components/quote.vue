@@ -19,14 +19,19 @@ export default {
 
 <style>
 .quote-container {
-    margin-top: 100px;
-    width: 100%;
+    margin-top: 80px;
+    width: 80%;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .quote-text {
@@ -41,7 +46,6 @@ export default {
     font-style: italic;
     font-weight: bold;
     color: #333;
-    margin-top: 5px;
-    /* Add some margin on top for spacing */
+    margin-top: 16px;
 }
 </style>
