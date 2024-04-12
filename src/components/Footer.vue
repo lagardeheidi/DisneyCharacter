@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .Footer {
-    background-color: #333;
+    background-color: #8093F1;
     color: #fff;
     padding: 10px 20px;
     text-align: center;
@@ -35,14 +35,14 @@ export default {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #D80286;
+    background-color: #642CA9;
     color: #fff;
     padding: 10px;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .back-to-top-button:hover {
-    background-color: #AA0C5C;
+    background-color: #642CA9;
     transform: scale(1.1);
 }
 

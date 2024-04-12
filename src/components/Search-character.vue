@@ -42,21 +42,21 @@ export default {
     flex: 0.5;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #D30F71;
+    border: 1px solid #642CA9;
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .search-bar:focus {
-    border-color: #AA0C5C;
-    box-shadow: 0 0 8px #AA0C5C;
+    border-color: #642CA9;
+    box-shadow: 0 0 8px #642CA9;
 }
 
 .search-button,
 .sort-button {
     padding: 10px 20px;
-    background-color: #D30F71;
+    background-color: #642CA9;
     color: white;
     border: none;
     border-radius: 5px;
@@ -67,18 +67,18 @@ export default {
 
 .search-button:hover,
 .sort-button:hover {
-    background-color: #AA0C5C;
+    background-color: #8093F1;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
 
 .sort-button {
-    background-color: #6C757D;
+    background-color: #8093F1;
 }
 
 .sort-button:hover {
-    background-color: #5A6268;
+    background-color: #642CA9;
 }
 
 @media screen and (max-width: 768px) {

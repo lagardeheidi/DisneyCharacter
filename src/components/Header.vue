@@ -87,7 +87,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(211, 15, 113);
+    background-color: rgb(128, 147, 241);
     z-index: 999;
     padding: 10px 20px;
 }

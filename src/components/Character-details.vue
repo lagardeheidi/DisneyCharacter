@@ -6,11 +6,17 @@
             <div class="home-button" @click="navigateToHome"><img width="45" height="45"
                     src="https://img.icons8.com/ios-glyphs/30/left.png" alt="left" /></div>
             <h1 class="character-name">{{ characterName }}</h1>
-            <img class="character-image" :src="imageUrl" :alt="characterName" />
-            <h2>Films:</h2>
-            <ul class="film-list">
-                <li v-for="film in films" :key="film" class="film-item">{{ film }}</li>
-            </ul>
+            <div class="character-info">
+                <div class="character-image">
+                    <img :src="imageUrl" :alt="characterName" />
+                </div>
+                <div class="films-container">
+                    <h2>Films:</h2>
+                    <ul class="film-list">
+                        <li v-for="film in films" :key="film" class="film-item">{{ film }}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -37,15 +43,19 @@ export default {
 
 <style scoped>
 .character-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-top: 60px;
     font-family: "Handlee", cursive;
 }
 
 .details-container {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
+    background-color: rgba(128, 191, 241);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(105, 101, 166, 0.4);
 }
 
 .character-name {
@@ -55,11 +65,33 @@ export default {
     font-family: 'Waltograph';
 }
 
+.character-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .character-image {
     width: 100%;
     max-width: 400px;
     height: auto;
-    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    /* Ajout de coins arrondis */
+    overflow: hidden;
+    /* Assure que l'image reste dans les limites de son conteneur */
+}
+
+.character-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.films-container {
+    flex: 1;
+    text-align: left;
 }
 
 .film-list {
@@ -88,8 +120,18 @@ export default {
         font-size: 30px;
     }
 
+    .character-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .character-image {
-        max-width: 70%;
+        max-width: 100%;
+        /* Ajustement de la largeur maximale pour les petits écrans */
+        margin-right: 0;
+        /* Suppression de la marge pour les petits écrans */
+        margin-bottom: 20px;
+        /* Ajout d'un espace entre l'image et la liste de films */
     }
 
     .home-button {

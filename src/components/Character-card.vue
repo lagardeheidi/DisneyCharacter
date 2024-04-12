@@ -26,8 +26,8 @@ export default {
     overflow: hidden;
     position: relative;
     transition: transform 0.3s;
-    border: 6px solid rgb(211, 15, 113);
-    border-radius: 10px;
+    border: 6px solid rgb(128, 147, 241);
+    border-radius: 20px;
     cursor: pointer;
 }
 
