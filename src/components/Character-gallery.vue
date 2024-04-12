@@ -108,7 +108,8 @@ export default {
     computed: {
         filteredCharacters() {
             return this.characterSearchData.filter(character =>
-                character.films.length > 0
+                character.films.length > 1
+
             );
         }
     },
@@ -130,6 +131,22 @@ export default {
     justify-content: center;
     gap: 20px;
     margin-bottom: 80px;
+}
+
+.Character-gallery div {
+    cursor: pointer;
+}
+
+.Character-gallery div:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.Character-gallery div img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .handlee-regular {
