@@ -5,7 +5,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     </head>
-    <!-- barre de recherche (composant) pour la gallerie -->
+    <!-- barre de recherche (composant) pour la galerie -->
     <SearchCharacter v-model:searchCharacterKey="searchCharacterKey"
         @update:searchCharacterKey="searchCharacterKey = $event" @search="characterSearched" @sort="sortCharacters" />
     <div class="Character-gallery">
@@ -18,7 +18,6 @@
             </template>
         </div>
     </div>
-
 </template>
 <script>
 import CharacterCard from './Character-card.vue';
@@ -33,8 +32,8 @@ export default {
             characterSearchData: [],
         }
     },
-    async created() {
-        // this.resetSearchCharacterKey();
+    created() {
+        this.resetSearchCharacterKey();
         this.characterSearched();
     },
     methods: {
@@ -70,7 +69,16 @@ export default {
                 }
                 this.characterSearchData = Array.isArray(actualData) ? actualData : [actualData];
                 console.log("lalala" + this.characterSearchData.data.name + this.characterSearchData.data.imageUrl);
-
+            } else {
+                const searchData = await getCharacterData();
+                let actualData;
+                if (Array.isArray(searchData)) {
+                    actualData = searchData;
+                } else {
+                    // Si les données sont encapsulées dans un objet Proxy
+                    actualData = searchData['[[Target]]'] || searchData.data;
+                }
+                this.characterSearchData = Array.isArray(actualData) ? actualData : [actualData];
             }
         },
         navigateToCharacterDetails(characterId, characterName, imageUrl, films) {
@@ -82,7 +90,8 @@ export default {
                     films: films
                 }
             });
-        }
+        },
+
     },
     // computed: {
     //     // filteredCharacters: function () {
@@ -103,8 +112,6 @@ export default {
             );
         }
     },
-
-
     components: {
         CharacterCard,
         SearchCharacter
@@ -114,6 +121,7 @@ export default {
         characterData: Array
     }
 }
+
 </script>
 <style scoped>
 .Character-gallery {
@@ -121,6 +129,7 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    margin-bottom: 80px;
 }
 
 .handlee-regular {
