@@ -3,7 +3,6 @@
         <HeaderVue @search="handleSearch"></HeaderVue>
         <!-- <HeaderVue></HeaderVue> -->
         <Quote :quote="currentQuote"></Quote>
-        <!-- barre recherche -->
         <CharacterGalleryVue :characterData="CharacterData"></CharacterGalleryVue>
         <Footer></Footer>
     </div>

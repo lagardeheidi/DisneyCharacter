@@ -2,11 +2,6 @@
     <div class="Header">
         <header>
             <h1 @click="navigateToHome">Disney Character</h1>
-            <!-- <div class="search-container">
-                <input type="text" class="search-input" v-model="searchQuery" @input="searchCharacter"
-                    placeholder="Rechercher un personnage...">
-                <button class="search-button" @click="searchCharacter">Rechercher</button>
-            </div> -->
         </header>
     </div>
 </template>
@@ -29,19 +24,6 @@ export default {
     //     this.searchText();
     // },
     methods: {
-        // searchCharacter() {
-        //     this.$emit('search', this.searchQuery);
-        // },
-
-        // 
-        // resetSearchCharacterKey() {
-        //     this.searchCharacterKey = '';
-        //     localStorage.removeItem('searchCharacterKey');
-        // },
-
-        // search: function () {
-        //     this.searchText()
-        // },
 
         // async characterSearched() {
         //     if (this.searchCharacterKey) {

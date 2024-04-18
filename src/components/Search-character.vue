@@ -42,7 +42,7 @@ export default {
     flex: 0.5;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #642CA9;
+    border: 2px solid #642CA9;
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -65,12 +65,10 @@ export default {
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
-.search-button:hover,
-.sort-button:hover {
+.search-button:hover {
     background-color: #8093F1;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
 }
 
 .sort-button {

@@ -2,6 +2,13 @@
     <div class="character-details">
         <HeaderVue></HeaderVue>
 
+        <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+                rel="stylesheet">
+        </head>
         <div class="details-container">
             <div class="home-button" @click="navigateToHome"><img width="45" height="45"
                     src="https://img.icons8.com/ios-glyphs/30/left.png" alt="left" /></div>
@@ -44,7 +51,7 @@ export default {
 <style scoped>
 .character-details {
     padding-top: 60px;
-    font-family: "Handlee", cursive;
+    font-family: "Poppins", cursive;
 }
 
 .details-container {
@@ -60,7 +67,7 @@ export default {
 
 .character-name {
     color: #000000;
-    font-size: 24px;
+    font-size: 44px;
     margin-top: 20px;
     font-family: 'Waltograph';
 }
@@ -78,10 +85,10 @@ export default {
     height: auto;
     margin-right: 20px;
     border-radius: 20px;
-    /* Ajout de coins arrondis */
     overflow: hidden;
-    /* Assure que l'image reste dans les limites de son conteneur */
 }
+
+
 
 .character-image img {
     width: 100%;
@@ -127,11 +134,8 @@ export default {
 
     .character-image {
         max-width: 100%;
-        /* Ajustement de la largeur maximale pour les petits écrans */
         margin-right: 0;
-        /* Suppression de la marge pour les petits écrans */
         margin-bottom: 20px;
-        /* Ajout d'un espace entre l'image et la liste de films */
     }
 
     .home-button {
