@@ -108,7 +108,7 @@ export default {
     computed: {
         filteredCharacters() {
             return this.characterSearchData.filter(character =>
-                character.films.length > 1
+                character.films.length > 0
 
             );
         }
