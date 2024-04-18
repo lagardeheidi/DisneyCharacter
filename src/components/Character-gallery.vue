@@ -108,8 +108,8 @@ export default {
     computed: {
         filteredCharacters() {
             return this.characterSearchData.filter(character =>
-                character.films.length > 0
-
+                character.films.length > 0 &&
+                character.name.toLowerCase() !== 'nazis'
             );
         }
     },
