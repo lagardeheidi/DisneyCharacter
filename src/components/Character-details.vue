@@ -67,6 +67,7 @@ export default {
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(105, 101, 166, 0.4);
     font-family: "Poppins", cursive;
+    margin-bottom: 100px;
 }
 
 .character-name {

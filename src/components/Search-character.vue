@@ -1,7 +1,7 @@
 <template>
     <div class="character_search">
         <input class="search-bar" type="text" :value="searchCharacterKey" @input="updateSearchCharacterKey"
-            placeholder="Search character">
+            placeholder="Search a character...">
         <button class="search-button" @click="launchSearch">Search</button>
         <button class="sort-button" @click="sort('asc')">A - Z</button>
         <button class="sort-button" @click="sort('desc')">Z - A</button>
