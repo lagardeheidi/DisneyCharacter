@@ -25,14 +25,18 @@
                 </div>
             </div>
         </div>
+        <FooterVue></FooterVue>
     </div>
+
 </template>
 
 <script>
 import HeaderVue from './Header.vue';
+import FooterVue from './Footer.vue';
 export default {
     components: {
-        HeaderVue
+        HeaderVue,
+        FooterVue
     },
     props: {
         id: String,
@@ -51,11 +55,10 @@ export default {
 <style scoped>
 .character-details {
     padding-top: 60px;
-    font-family: "Poppins", cursive;
 }
 
 .details-container {
-    max-width: 800px;
+    max-width: 350px;
     margin: 0 auto;
     text-align: center;
     background-color: rgba(128, 191, 241);
@@ -63,6 +66,7 @@ export default {
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(105, 101, 166, 0.4);
+    font-family: "Poppins", cursive;
 }
 
 .character-name {
@@ -70,35 +74,45 @@ export default {
     font-size: 44px;
     margin-top: 20px;
     font-family: 'Waltograph';
+    font-weight: lighter;
 }
 
 .character-info {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .character-image {
     width: 100%;
     max-width: 400px;
     height: auto;
-    margin-right: 20px;
+    margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-
 
 .character-image img {
     width: 100%;
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+}
+
+.character-image img:hover {
+    transform: scale(1.1);
 }
 
 .films-container {
-    flex: 1;
-    text-align: left;
+    text-align: center;
 }
 
 .film-list {
@@ -111,6 +125,12 @@ export default {
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
+    max-width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.film-item:hover {
+    background-color: #ddd;
 }
 
 .home-button {
